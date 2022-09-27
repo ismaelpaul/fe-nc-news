@@ -1,27 +1,35 @@
+.topic-body {
+	height: 83vh;
+}
 .topic-gallery {
 	list-style-type: none;
 	display: flex;
 	flex-direction: row;
+
 	justify-content: center;
-	gap: 1.5rem;
+	gap: 3.5rem;
 }
 
 .topic-card {
-	text-decoration: none;
 	margin-top: 1.5rem;
-	width: 30%;
+	width: 20%;
+	max-width: 40%;
 	background-color: white;
+	border: 1px solid red;
 	border-radius: 1.5rem;
 	transition: box-shadow 0.4s;
 }
 
-.topic-tag {
+.topic-links {
+	text-decoration: none;
+	margin-bottom: 2rem;
+}
+.topic-links p {
 	color: red;
 }
-
-li h2 {
-	text-decoration: none;
+.topic-links h2 {
 	margin-top: 1rem;
 	padding: 1rem;
 	font-size: 1rem;
+	color: black;
 }

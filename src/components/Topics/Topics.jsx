@@ -15,14 +15,14 @@ const Topics = () => {
 	}, []);
 
 	return (
-		<section>
+		<section className="topic-body">
 			<ul className="topic-gallery">
 				{topics.map((topic) => {
 					return (
 						<li key={topic.slug} className="topic-card">
-							<Link to={`/articles/${topic.slug}`}>
+							<Link className="topic-links" to={`/articles/${topic.slug}`}>
 								<h2>{topic.description}</h2>
-								<p className="topic-tag">{topic.slug}</p>
+								<p>{topic.slug}</p>
 							</Link>
 						</li>
 					);
