@@ -1,0 +1,27 @@
+.topic-gallery {
+	list-style-type: none;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	gap: 1.5rem;
+}
+
+.topic-card {
+	text-decoration: none;
+	margin-top: 1.5rem;
+	width: 30%;
+	background-color: white;
+	border-radius: 1.5rem;
+	transition: box-shadow 0.4s;
+}
+
+.topic-tag {
+	color: red;
+}
+
+li h2 {
+	text-decoration: none;
+	margin-top: 1rem;
+	padding: 1rem;
+	font-size: 1rem;
+}

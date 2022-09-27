@@ -1,22 +1,34 @@
 import './Articles.css';
 import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
 const Articles = () => {
+	const { topic } = useParams();
 	const [articles, setArticles] = useState([]);
 
 	useEffect(() => {
-		axios
-			.get('https://news-backend-project.herokuapp.com/api/articles')
-			.then(({ data }) => {
-				setArticles(data.articles);
-			});
-	}, []);
+		if (topic) {
+			axios
+				.get(
+					`https://news-backend-project.herokuapp.com/api/articles?topic=${topic}`
+				)
+				.then(({ data }) => {
+					setArticles(data.articles);
+				});
+		} else {
+			axios
+				.get('https://news-backend-project.herokuapp.com/api/articles')
+				.then(({ data }) => {
+					setArticles(data.articles);
+				});
+		}
+	}, [topic]);
 
 	return (
 		<main>
 			<section>
-				<ul className="articles-gallery">
+				<ul className="gallery">
 					{articles.map((article) => {
 						return (
 							<li key={article.article_id} className="card">
