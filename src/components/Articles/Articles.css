@@ -1,0 +1,29 @@
+main {
+	margin-top: 2rem;
+}
+.articles-gallery {
+	list-style-type: none;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1.5rem;
+}
+
+.card {
+	width: 50%;
+	background-color: white;
+	border-radius: 1.5rem;
+	transition: box-shadow 0.4s;
+}
+
+.card:hover {
+	box-shadow: 0 0 15px #c3c3c3;
+}
+li h1 {
+	margin-top: 1rem;
+	padding: 1rem;
+}
+li p {
+	padding: 1rem;
+	margin-bottom: 1rem;
+}

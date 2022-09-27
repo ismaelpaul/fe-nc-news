@@ -1,0 +1,15 @@
+nav {
+	height: 7vh;
+	background-color: white;
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+nav li {
+	padding: 0.5rem;
+}
+nav a {
+	padding: 2rem;
+	text-decoration: none;
+	color: black;
+	font-size: 1.5rem;
+	font-weight: bold;
+}
