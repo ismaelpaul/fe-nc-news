@@ -1,7 +1,7 @@
 main {
 	margin-top: 2rem;
 }
-.articles-gallery {
+.gallery {
 	list-style-type: none;
 	display: flex;
 	flex-direction: column;
