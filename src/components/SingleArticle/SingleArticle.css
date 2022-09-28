@@ -1,0 +1,20 @@
+main {
+	margin-top: 4rem;
+}
+
+.single-article-body {
+	height: 92vh;
+}
+
+.single-article {
+	list-style-type: none;
+	margin: 0 15%;
+}
+.single-article p {
+	padding: 0.4rem 0;
+	line-height: 1.5rem;
+}
+
+.author {
+	margin-bottom: 1.5rem;
+}
