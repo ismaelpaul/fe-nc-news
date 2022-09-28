@@ -10,6 +10,7 @@ main {
 }
 
 .card {
+	text-decoration: none;
 	width: 50%;
 	background-color: white;
 	border-radius: 1.5rem;
@@ -26,4 +27,18 @@ main {
 .card p {
 	padding: 1rem;
 	margin-bottom: 1rem;
+}
+.spinner {
+	justify-content: center;
+	z-index: 1;
+}
+.spinner-container {
+	height: 100vh;
+	z-index: 1;
+	transform: translateY(30%);
+}
+
+li a {
+	text-decoration: none;
+	color: black;
 }
