@@ -10,6 +10,7 @@ const SingleArticle = () => {
 	const { article_id } = useParams();
 	const [article, setArticle] = useState([]);
 	const [isLoading, setIsLoading] = useState(true);
+	const [error, setError] = useState(null);
 
 	useEffect(() => {
 		axios
@@ -19,9 +20,15 @@ const SingleArticle = () => {
 			.then(({ data }) => {
 				setArticle(data.article);
 				setIsLoading(false);
+			})
+			.catch((err) => {
+				setError(err.response.data.msg);
 			});
 	}, [article_id]);
 
+	if (error) {
+		return <h2>{error}</h2>;
+	}
 	if (isLoading) {
 		return (
 			<div className="spinner-container">
