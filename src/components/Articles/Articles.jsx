@@ -54,8 +54,11 @@ const Articles = () => {
 							<li key={article.article_id} className="card">
 								<Link to={`/articles/${article.article_id}`}>
 									<h1>{article.title}</h1>
+									<p className="author">
+										by <strong>{article.author}</strong>
+									</p>
 									<p>Topic: {article.topic}</p>
-									<p>Author: {article.author}</p>
+
 									<p>Votes: {article.votes}</p>
 									<p>Comments: {article.comment_count}</p>
 									<p>{article.created_at}</p>
