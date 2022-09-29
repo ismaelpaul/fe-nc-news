@@ -6,7 +6,10 @@ const Header = () => {
 	return (
 		<header>
 			<h1>NC News</h1>
-			<HiUserCircle className="profile-icon" />
+			<div className="login">
+				<HiUserCircle className="profile-icon" />
+				<p>Login</p>
+			</div>
 		</header>
 	);
 };
