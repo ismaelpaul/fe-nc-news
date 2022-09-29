@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { GoComment } from 'react-icons/go';
 import moment from 'moment';
+import CommentsList from '../CommentsList/CommentsList';
 
 const SingleArticle = () => {
 	const { article_id } = useParams();
@@ -115,6 +116,7 @@ const SingleArticle = () => {
 								<GoComment /> <strong>{article.comment_count}</strong> comments
 							</p>
 						</div>
+						<CommentsList article_id={article_id} />
 					</li>
 				</ul>
 			</section>

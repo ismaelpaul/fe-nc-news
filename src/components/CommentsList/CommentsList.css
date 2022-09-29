@@ -1,0 +1,14 @@
+.comments-card {
+	margin-top: 2rem;
+}
+.comments-card ul {
+	margin-top: 2rem;
+}
+.comments-card li {
+	list-style-type: none;
+}
+
+.comments-author {
+	font-size: 0.9rem;
+	list-style-type: none;
+}
