@@ -7,10 +7,12 @@ import { useParams } from 'react-router-dom';
 import { GoComment } from 'react-icons/go';
 import moment from 'moment';
 import CommentsList from '../CommentsList/CommentsList';
+import CommentAdder from '../CommentAdder/CommentAdder';
 
 const SingleArticle = () => {
 	const { article_id } = useParams();
 	const [article, setArticle] = useState({});
+	const [commentsList, setCommentsList] = useState([]);
 	const [isLoading, setIsLoading] = useState(true);
 	const [error, setError] = useState(null);
 
@@ -116,7 +118,15 @@ const SingleArticle = () => {
 								<GoComment /> <strong>{article.comment_count}</strong> comments
 							</p>
 						</div>
-						<CommentsList article_id={article_id} />
+						<CommentAdder
+							article_id={article_id}
+							setCommentsList={setCommentsList}
+						/>
+						<CommentsList
+							commentsList={commentsList}
+							setCommentsList={setCommentsList}
+							article_id={article_id}
+						/>
 					</li>
 				</ul>
 			</section>
