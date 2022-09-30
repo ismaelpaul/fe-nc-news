@@ -15,15 +15,12 @@ const CommentAdder = ({ article_id, setCommentsList }) => {
 	const handleSubmit = (event) => {
 		event.preventDefault();
 
-		console.log(newComment, '<<< newcomment');
-
 		axios
 			.post(
 				`https://news-backend-project.herokuapp.com/api/articles/${article_id}/comments`,
 				newComment
 			)
 			.then(({ data }) => {
-				console.log(data, '<<<< data');
 				setCommentsList((currentComments) => {
 					return [data.comment, ...currentComments];
 				});
