@@ -5,8 +5,7 @@ import { Oval } from 'react-loader-spinner';
 import moment from 'moment';
 import { BsHandThumbsUp, BsHandThumbsDown } from 'react-icons/bs';
 
-const CommentsList = ({ article_id }) => {
-	const [commentsList, setCommentsLits] = useState([]);
+const CommentsList = ({ article_id, commentsList, setCommentsList }) => {
 	const [isLoading, setIsLoading] = useState(true);
 
 	useEffect(() => {
@@ -15,7 +14,7 @@ const CommentsList = ({ article_id }) => {
 				`https://news-backend-project.herokuapp.com/api/articles/${article_id}/comments`
 			)
 			.then(({ data }) => {
-				setCommentsLits(data.comments);
+				setCommentsList(data.comments);
 				setIsLoading(false);
 			});
 	}, [article_id]);

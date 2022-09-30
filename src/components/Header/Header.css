@@ -14,3 +14,12 @@ header h1 {
 	font-size: 2.5rem;
 	color: rgb(255, 255, 255);
 }
+
+.login {
+	display: flex;
+	color: white;
+	font-weight: bold;
+}
+.login p {
+	padding: 0.4rem 0.5rem;
+}
