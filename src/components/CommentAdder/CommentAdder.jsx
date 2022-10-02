@@ -1,9 +1,9 @@
 import { useContext, useState } from 'react';
-import axios from 'axios';
 import { UserContext } from '../../contexts/User';
+import { postComment } from '../../utils/api';
 
 const CommentAdder = ({ article_id, setCommentsList }) => {
-	const { loggedInUser, setLoggedInUser } = useContext(UserContext);
+	const { loggedInUser } = useContext(UserContext);
 	const [newComment, setNewComment] = useState({
 		username: loggedInUser.username,
 		body: '',
@@ -15,16 +15,11 @@ const CommentAdder = ({ article_id, setCommentsList }) => {
 	const handleSubmit = (event) => {
 		event.preventDefault();
 
-		axios
-			.post(
-				`https://news-backend-project.herokuapp.com/api/articles/${article_id}/comments`,
-				newComment
-			)
-			.then(({ data }) => {
-				setCommentsList((currentComments) => {
-					return [data.comment, ...currentComments];
-				});
+		postComment(article_id, newComment).then(({ comment }) => {
+			setCommentsList((currentComments) => {
+				return [comment, ...currentComments];
 			});
+		});
 		setNewComment({ username: loggedInUser.username, body: '' });
 	};
 	return (

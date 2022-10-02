@@ -8,6 +8,7 @@ import { GoComment } from 'react-icons/go';
 import moment from 'moment';
 import CommentsList from '../CommentsList/CommentsList';
 import CommentAdder from '../CommentAdder/CommentAdder';
+import { getArticleById } from '../../utils/api';
 
 const SingleArticle = () => {
 	const { article_id } = useParams();
@@ -17,10 +18,7 @@ const SingleArticle = () => {
 	const [error, setError] = useState(null);
 
 	useEffect(() => {
-		axios
-			.get(
-				`https://news-backend-project.herokuapp.com/api/articles/${article_id}`
-			)
+		getArticleById(article_id)
 			.then(({ data }) => {
 				setArticle(data.article);
 				setIsLoading(false);

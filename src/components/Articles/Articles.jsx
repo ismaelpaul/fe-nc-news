@@ -1,13 +1,16 @@
 import './Articles.css';
 import { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useSearchParams, useParams, Link } from 'react-router-dom';
 import { Oval } from 'react-loader-spinner';
 import axios from 'axios';
+import DropDownSortBy from '../DropDownSortBy/DropDownSortBy';
+import { getArticles } from '../../utils/api';
 
 const Articles = () => {
 	const { topic } = useParams();
 	const [articles, setArticles] = useState([]);
 	const [isLoading, setIsLoading] = useState(true);
+	const [searchParams, setSearchParams] = useSearchParams({});
 
 	useEffect(() => {
 		if (topic) {
@@ -20,12 +23,10 @@ const Articles = () => {
 					setIsLoading(false);
 				});
 		} else {
-			axios
-				.get('https://news-backend-project.herokuapp.com/api/articles')
-				.then(({ data }) => {
-					setArticles(data.articles);
-					setIsLoading(false);
-				});
+			getArticles().then(({ articles }) => {
+				setArticles(articles);
+				setIsLoading(false);
+			});
 		}
 	}, [topic]);
 
@@ -48,6 +49,7 @@ const Articles = () => {
 	return (
 		<main>
 			<section>
+				<DropDownSortBy setSearchParams={setSearchParams} />
 				<ul className="gallery">
 					{articles.map((article) => {
 						return (
