@@ -1,10 +1,14 @@
 import './Articles.css';
 import { useEffect, useState } from 'react';
 import { useSearchParams, useParams, Link } from 'react-router-dom';
+
+import { GoComment } from 'react-icons/go';
 import { Oval } from 'react-loader-spinner';
 import axios from 'axios';
 import DropDownSortBy from '../DropDownSortBy/DropDownSortBy';
 import { getArticles } from '../../utils/api';
+import moment from 'moment';
+import ArticleVotes from '../ArticleVotes/ArticleVotes';
 
 const Articles = () => {
 	const { topic } = useParams();
@@ -55,15 +59,24 @@ const Articles = () => {
 						return (
 							<li key={article.article_id} className="card">
 								<Link to={`/articles/${article.article_id}`}>
+									<p>{article.topic}</p>
 									<h1>{article.title}</h1>
 									<p className="author">
-										by <strong>{article.author}</strong>
+										{' '}
+										posted by <strong>{article.author}</strong> •{' '}
+										{moment(article.created_at).fromNow()}
 									</p>
-									<p>Topic: {article.topic}</p>
 
-									<p>Votes: {article.votes}</p>
-									<p>Comments: {article.comment_count}</p>
-									<p>{article.created_at}</p>
+									<div className="article-interaction">
+										{/* <ArticleVotes
+											votes={article.votes}
+											article_id={article.article_id}
+										/> */}
+										<p>
+											<GoComment /> <strong>{article.comment_count}</strong>{' '}
+											comments
+										</p>
+									</div>
 								</Link>
 							</li>
 						);

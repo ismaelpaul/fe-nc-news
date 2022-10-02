@@ -11,7 +11,15 @@ export const getArticles = () => {
 };
 
 export const getArticleById = (article_id) => {
-	return newsApi.get(`/articles/${article_id}`);
+	return newsApi.get(`/articles/${article_id}`).then((res) => {
+		return res.data;
+	});
+};
+
+export const updateArticle = (article_id, reqBody) => {
+	return newsApi.patch(`/articles/${article_id}`, reqBody).then((res) => {
+		return res.data;
+	});
 };
 
 export const getTopics = () => {
