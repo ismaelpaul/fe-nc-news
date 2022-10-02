@@ -1,7 +1,5 @@
 import './SingleArticle.css';
 import { Oval } from 'react-loader-spinner';
-import { BsHandThumbsUp, BsHandThumbsDown } from 'react-icons/bs';
-import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { GoComment } from 'react-icons/go';
@@ -9,6 +7,7 @@ import moment from 'moment';
 import CommentsList from '../CommentsList/CommentsList';
 import CommentAdder from '../CommentAdder/CommentAdder';
 import { getArticleById } from '../../utils/api';
+import ArticleVotes from '../ArticleVotes/ArticleVotes';
 
 const SingleArticle = () => {
 	const { article_id } = useParams();
@@ -19,56 +18,14 @@ const SingleArticle = () => {
 
 	useEffect(() => {
 		getArticleById(article_id)
-			.then(({ data }) => {
-				setArticle(data.article);
+			.then(({ article }) => {
+				setArticle(article);
 				setIsLoading(false);
 			})
 			.catch((err) => {
 				setError(err.response.data.msg);
 			});
 	}, [article_id]);
-
-	const articleVotesUp = () => {
-		setArticle((currentArticle) => {
-			return { ...currentArticle, votes: currentArticle.votes + 1 };
-		});
-		const reqBody = {
-			inc_votes: 1,
-		};
-
-		axios
-			.patch(
-				`https://news-backend-project.herokuapp.com/api/articles/${article_id}`,
-				reqBody
-			)
-			.then((data) => {})
-			.catch((err) => {
-				setArticle((currentArticle) => {
-					return { ...currentArticle, votes: currentArticle.votes - 1 };
-				});
-			});
-	};
-
-	const articleVotesDown = () => {
-		setArticle((currentArticle) => {
-			return { ...currentArticle, votes: currentArticle.votes - 1 };
-		});
-		const reqBody = {
-			inc_votes: -1,
-		};
-
-		axios
-			.patch(
-				`https://news-backend-project.herokuapp.com/api/articles/${article_id}`,
-				reqBody
-			)
-			.then((data) => {})
-			.catch((err) => {
-				setArticle((currentArticle) => {
-					return { ...currentArticle, votes: currentArticle.votes + 1 };
-				});
-			});
-	};
 
 	if (error) {
 		return <h2>{error}</h2>;
@@ -105,12 +62,12 @@ const SingleArticle = () => {
 						<p>{article.body}</p>
 						<div className="single-article-interaction">
 							<p>
-								<BsHandThumbsUp
-									aria-label="votes for this comment"
-									onClick={articleVotesUp}
-								/>{' '}
-								<strong>{article.votes}</strong>{' '}
-								<BsHandThumbsDown onClick={articleVotesDown} />
+								{' '}
+								<ArticleVotes
+									article_id={article_id}
+									article={article}
+									setArticle={setArticle}
+								/>
 							</p>
 							<p>
 								<GoComment /> <strong>{article.comment_count}</strong> comments
