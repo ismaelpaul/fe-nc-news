@@ -1,20 +1,18 @@
 import './Topics.css';
-import axios from 'axios';
 import { Oval } from 'react-loader-spinner';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { getTopics } from '../../utils/api';
 
 const Topics = () => {
 	const [topics, setTopics] = useState([]);
 	const [isLoading, setIsLoading] = useState(true);
 
 	useEffect(() => {
-		axios
-			.get('https://news-backend-project.herokuapp.com/api/topics')
-			.then(({ data }) => {
-				setTopics(data.topic);
-				setIsLoading(false);
-			});
+		getTopics().then(({ topic }) => {
+			setTopics(topic);
+			setIsLoading(false);
+		});
 	}, []);
 
 	if (isLoading) {

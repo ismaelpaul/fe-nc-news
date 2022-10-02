@@ -1,23 +1,19 @@
 import './CommentsList.css';
-import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { Oval } from 'react-loader-spinner';
 import moment from 'moment';
 import { BsHandThumbsUp, BsHandThumbsDown } from 'react-icons/bs';
+import { getCommentsByArticle } from '../../utils/api';
 
 const CommentsList = ({ article_id, commentsList, setCommentsList }) => {
 	const [isLoading, setIsLoading] = useState(true);
 
 	useEffect(() => {
-		axios
-			.get(
-				`https://news-backend-project.herokuapp.com/api/articles/${article_id}/comments`
-			)
-			.then(({ data }) => {
-				setCommentsList(data.comments);
-				setIsLoading(false);
-			});
-	}, [article_id]);
+		getCommentsByArticle(article_id).then(({ comments }) => {
+			setCommentsList(comments);
+			setIsLoading(false);
+		});
+	}, [article_id, setCommentsList]);
 
 	if (isLoading) {
 		return (
