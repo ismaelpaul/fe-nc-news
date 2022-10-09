@@ -10,6 +10,8 @@ main {
 	list-style-type: none;
 	margin: 0 20%;
 	background-color: white;
+	padding-left: 0 !important;
+	padding-right: 0 !important;
 }
 .single-article-card,
 h1,
@@ -32,5 +34,10 @@ p {
 .single-article-interaction {
 	display: flex;
 	justify-content: center;
+	align-items: center;
 	margin: 1rem 0;
+}
+
+.comment-icon {
+	font-size: 1.4rem;
 }
