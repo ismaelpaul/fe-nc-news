@@ -1,13 +1,15 @@
+import './ArticleVotes.css';
 import { useState } from 'react';
 import { BsHandThumbsUp, BsHandThumbsDown } from 'react-icons/bs';
 import { updateArticle } from '../../utils/api';
 
 const ArticleVotes = ({ article_id, article, setArticle }) => {
-	const [hasVoted, setHasVoted] = useState(false);
+	const [hasVotedUp, setHasVotedUp] = useState(false);
+	const [hasVotedDown, setHasVotedDown] = useState(false);
 	const [error, setError] = useState(null);
 
 	const articleVotesUp = () => {
-		if (!hasVoted) {
+		if (!hasVotedUp) {
 			setArticle((currentArticle) => {
 				return { ...currentArticle, votes: currentArticle.votes + 1 };
 			});
@@ -23,7 +25,8 @@ const ArticleVotes = ({ article_id, article, setArticle }) => {
 						return { ...currentArticle, votes: currentArticle.votes - 1 };
 					});
 				});
-			setHasVoted(true);
+			setHasVotedUp(true);
+			setHasVotedDown(false);
 		} else {
 			setArticle((currentArticle) => {
 				return { ...currentArticle, votes: currentArticle.votes - 1 };
@@ -40,12 +43,12 @@ const ArticleVotes = ({ article_id, article, setArticle }) => {
 						return { ...currentArticle, votes: currentArticle.votes + 1 };
 					});
 				});
-			setHasVoted(false);
+			setHasVotedUp(false);
 		}
 	};
 
 	const articleVotesDown = () => {
-		if (!hasVoted) {
+		if (!hasVotedDown) {
 			setArticle((currentArticle) => {
 				return { ...currentArticle, votes: currentArticle.votes - 1 };
 			});
@@ -61,7 +64,8 @@ const ArticleVotes = ({ article_id, article, setArticle }) => {
 						return { ...currentArticle, votes: currentArticle.votes + 1 };
 					});
 				});
-			setHasVoted(true);
+			setHasVotedDown(true);
+			setHasVotedUp(false);
 		} else {
 			setArticle((currentArticle) => {
 				return { ...currentArticle, votes: currentArticle.votes + 1 };
@@ -78,7 +82,7 @@ const ArticleVotes = ({ article_id, article, setArticle }) => {
 						return { ...currentArticle, votes: currentArticle.votes - 1 };
 					});
 				});
-			setHasVoted(false);
+			setHasVotedDown(false);
 		}
 	};
 
@@ -86,13 +90,19 @@ const ArticleVotes = ({ article_id, article, setArticle }) => {
 		return <h2>{error}</h2>;
 	}
 	return (
-		<>
-			<BsHandThumbsUp onClick={articleVotesUp} />
+		<div className="votes">
+			<BsHandThumbsUp
+				onClick={articleVotesUp}
+				className={hasVotedUp ? 'thumb-voted' : 'thumb-unvoted'}
+			/>
 			<p>
 				<strong>{article.votes}</strong>
 			</p>
-			<BsHandThumbsDown onClick={articleVotesDown} />
-		</>
+			<BsHandThumbsDown
+				onClick={articleVotesDown}
+				className={hasVotedDown ? 'thumb-voted' : 'thumb-unvoted'}
+			/>
+		</div>
 	);
 };
 

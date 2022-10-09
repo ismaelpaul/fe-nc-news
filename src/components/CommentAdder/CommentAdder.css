@@ -1,0 +1,28 @@
+.comment-adder-form {
+	display: flex;
+	justify-content: space-between;
+	background-color: rgb(241, 241, 241);
+	padding: 1rem;
+}
+.comment-adder-text {
+	resize: none;
+	width: 73%;
+	height: 2rem;
+	line-height: 1.8rem;
+}
+.comment-adder-btn-inactive {
+	border: 1.5px solid red;
+	border-radius: 25px;
+	background-color: white;
+	padding: 0.5rem 1rem;
+	color: red;
+	font-weight: bold;
+}
+.comment-adder-btn-active {
+	border: 1.5px solid red;
+	border-radius: 25px;
+	background-color: red;
+	padding: 0.5rem 1rem;
+	color: white;
+	font-weight: bold;
+}

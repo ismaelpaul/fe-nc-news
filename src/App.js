@@ -12,6 +12,7 @@ function App() {
 			<Header />
 			<NavBar />
 			<Routes>
+				<Route path="/" element={<Articles />}></Route>
 				<Route path="/articles" element={<Articles />}></Route>
 				<Route path="/topics" element={<Topics />}></Route>
 				<Route path="/articles/topic/:topic" element={<Articles />}></Route>

@@ -1,0 +1,11 @@
+.votes {
+	display: flex;
+	align-items: center;
+}
+.thumb-unvoted {
+	font-size: 1.4rem;
+}
+.thumb-voted {
+	font-size: 1.4rem;
+	color: red;
+}
