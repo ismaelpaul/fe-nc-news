@@ -31,19 +31,21 @@ const Topics = () => {
 			</div>
 		);
 	}
-
 	return (
 		<section className="topic-body">
+			<Link to={`/articles/`}>
+				<button className="topic-buttons-all">All Articles</button>
+			</Link>
+
 			<ul className="topic-gallery">
 				{topics.map((topic) => {
 					return (
-						<li key={topic.slug} className="topic-card">
-							<Link
-								className="topic-links"
-								to={`/articles/topic/${topic.slug}`}
-							>
-								<h2>{topic.description}</h2>
-								<p>{topic.slug}</p>
+						<li key={topic.slug}>
+							<Link to={`/articles/topic/${topic.slug}`}>
+								<button className="topic-buttons">
+									{topic['slug'].charAt(0).toUpperCase() +
+										topic['slug'].slice(1)}
+								</button>
 							</Link>
 						</li>
 					);

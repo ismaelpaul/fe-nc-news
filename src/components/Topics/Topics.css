@@ -1,31 +1,41 @@
 .topic-body {
-	height: 83vh;
-}
-.topic-gallery {
-	list-style-type: none;
 	display: flex;
-	flex-direction: row;
-
+	flex-wrap: wrap;
 	justify-content: center;
-	gap: 3.5rem;
-}
-
-.topic-card {
-	margin-top: 1.5rem;
-	width: 20%;
-	max-width: 40%;
+	align-items: center;
 	background-color: white;
-	border: 1px solid red;
-	border-radius: 1.5rem;
-	transition: box-shadow 0.4s;
+	min-height: 10%;
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
-.topic-links {
-	text-decoration: none;
-	margin-bottom: 2rem;
+.topic-gallery {
+	display: flex;
+	flex-wrap: wrap;
+	padding-left: 1rem;
+	list-style-type: none;
+	gap: 1rem;
 }
-.topic-links p {
+.topic-buttons-all {
+	margin: 1rem;
+	background-color: white;
 	color: red;
+	border: 1.5px solid red;
+	padding: 0.3rem 1rem;
+	border-radius: 2rem;
+	cursor: pointer;
+}
+
+.topic-buttons {
+	color: white;
+	background-color: red;
+	border: 1.5px solid red;
+	padding: 0.3rem 1rem;
+	border-radius: 2rem;
+	cursor: pointer;
+}
+.topic-buttons:hover,
+.topic-buttons-all:hover {
+	box-shadow: 0 2px 4px 0 rgba(202, 66, 66, 0.741);
 }
 .topic-links h2 {
 	margin-top: 1rem;
