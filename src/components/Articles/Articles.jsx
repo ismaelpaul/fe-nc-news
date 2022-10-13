@@ -9,6 +9,7 @@ import DropDownSortBy from '../DropDownSortBy/DropDownSortBy';
 import { getArticles } from '../../utils/api';
 import moment from 'moment';
 import ArticleVotes from '../ArticleVotes/ArticleVotes';
+import Topics from '../Topics/Topics';
 
 const Articles = () => {
 	const { topic } = useParams();
@@ -52,6 +53,7 @@ const Articles = () => {
 	}
 	return (
 		<main>
+			<Topics />
 			<section>
 				<DropDownSortBy setSearchParams={setSearchParams} />
 				<ul className="gallery">
@@ -68,10 +70,6 @@ const Articles = () => {
 									</p>
 
 									<div className="article-interaction">
-										{/* <ArticleVotes
-											votes={article.votes}
-											article_id={article.article_id}
-										/> */}
 										<p>
 											<GoComment /> <strong>{article.comment_count}</strong>{' '}
 											comments
