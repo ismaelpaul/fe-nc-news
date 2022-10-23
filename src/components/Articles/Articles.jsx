@@ -1,21 +1,18 @@
 import './Articles.css';
 import { useEffect, useState } from 'react';
-import { useSearchParams, useParams, Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 import { GoComment } from 'react-icons/go';
 import { Oval } from 'react-loader-spinner';
 import axios from 'axios';
-import DropDownSortBy from '../DropDownSortBy/DropDownSortBy';
 import { getArticles } from '../../utils/api';
 import moment from 'moment';
-import ArticleVotes from '../ArticleVotes/ArticleVotes';
 import Topics from '../Topics/Topics';
 
 const Articles = () => {
 	const { topic } = useParams();
 	const [articles, setArticles] = useState([]);
 	const [isLoading, setIsLoading] = useState(true);
-	const [searchParams, setSearchParams] = useSearchParams({});
 
 	useEffect(() => {
 		if (topic) {
@@ -60,7 +57,6 @@ const Articles = () => {
 						return (
 							<li key={article.article_id} className="card">
 								<Link to={`/articles/${article.article_id}`}>
-									<p>{article.topic}</p>
 									<h1>{article.title}</h1>
 									<p className="author">
 										{' '}
