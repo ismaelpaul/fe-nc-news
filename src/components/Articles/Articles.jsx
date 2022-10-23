@@ -55,7 +55,6 @@ const Articles = () => {
 		<main>
 			<Topics />
 			<section>
-				<DropDownSortBy setSearchParams={setSearchParams} />
 				<ul className="gallery">
 					{articles.map((article) => {
 						return (
