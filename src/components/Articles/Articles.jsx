@@ -1,20 +1,18 @@
 import './Articles.css';
 import { useEffect, useState } from 'react';
-import { useSearchParams, useParams, Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 import { GoComment } from 'react-icons/go';
 import { Oval } from 'react-loader-spinner';
 import axios from 'axios';
 import { getArticles } from '../../utils/api';
 import moment from 'moment';
-import ArticleVotes from '../ArticleVotes/ArticleVotes';
 import Topics from '../Topics/Topics';
 
 const Articles = () => {
 	const { topic } = useParams();
 	const [articles, setArticles] = useState([]);
 	const [isLoading, setIsLoading] = useState(true);
-	const [searchParams, setSearchParams] = useSearchParams({});
 
 	useEffect(() => {
 		if (topic) {
