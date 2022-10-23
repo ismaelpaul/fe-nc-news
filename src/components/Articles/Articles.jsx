@@ -5,7 +5,6 @@ import { useSearchParams, useParams, Link } from 'react-router-dom';
 import { GoComment } from 'react-icons/go';
 import { Oval } from 'react-loader-spinner';
 import axios from 'axios';
-import DropDownSortBy from '../DropDownSortBy/DropDownSortBy';
 import { getArticles } from '../../utils/api';
 import moment from 'moment';
 import ArticleVotes from '../ArticleVotes/ArticleVotes';
@@ -55,7 +54,6 @@ const Articles = () => {
 		<main>
 			<Topics />
 			<section>
-				<DropDownSortBy setSearchParams={setSearchParams} />
 				<ul className="gallery">
 					{articles.map((article) => {
 						return (
