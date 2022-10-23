@@ -6,6 +6,7 @@
 	background-color: white;
 	min-height: 10%;
 	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+	margin-bottom: 2rem;
 }
 
 .topic-gallery {
@@ -18,24 +19,28 @@
 .topic-buttons-all {
 	margin: 1rem;
 	background-color: white;
-	color: red;
-	border: 1.5px solid red;
+	color: #3b3b3b;
+	border: 2px solid #696969;
 	padding: 0.3rem 1rem;
 	border-radius: 2rem;
 	cursor: pointer;
+	font-weight: bold;
+	letter-spacing: 0.5px;
 }
 
 .topic-buttons {
-	color: white;
-	background-color: red;
-	border: 1.5px solid red;
+	color: #3b3b3b;
+	background-color: #d2d2d2;
+	border: 2px solid #696969;
 	padding: 0.3rem 1rem;
 	border-radius: 2rem;
 	cursor: pointer;
+	font-weight: bold;
+	letter-spacing: 0.5px;
 }
 .topic-buttons:hover,
 .topic-buttons-all:hover {
-	box-shadow: 0 2px 4px 0 rgba(202, 66, 66, 0.741);
+	box-shadow: 0 2px 4px 0 rgba(165, 165, 165, 0.741);
 }
 .topic-links h2 {
 	margin-top: 1rem;
