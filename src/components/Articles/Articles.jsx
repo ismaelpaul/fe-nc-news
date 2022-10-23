@@ -4,33 +4,26 @@ import { useParams, Link } from 'react-router-dom';
 
 import { GoComment } from 'react-icons/go';
 import { Oval } from 'react-loader-spinner';
-import axios from 'axios';
 import { getArticles } from '../../utils/api';
 import moment from 'moment';
 import Topics from '../Topics/Topics';
+import DropdownQueries from '../DropdownQueries/DropdownQueries';
 
 const Articles = () => {
 	const { topic } = useParams();
 	const [articles, setArticles] = useState([]);
 	const [isLoading, setIsLoading] = useState(true);
+	const [sortBy, setSortBy] = useState('created_at');
+	const [order, setOrder] = useState('DESC');
 
 	useEffect(() => {
-		if (topic) {
-			axios
-				.get(
-					`https://news-backend-project.herokuapp.com/api/articles?topic=${topic}`
-				)
-				.then(({ data }) => {
-					setArticles(data.articles);
-					setIsLoading(false);
-				});
-		} else {
-			getArticles().then(({ articles }) => {
-				setArticles(articles);
-				setIsLoading(false);
-			});
-		}
-	}, [topic]);
+		setIsLoading(true);
+
+		getArticles(topic, sortBy, order).then(({ articles }) => {
+			setArticles(articles);
+			setIsLoading(false);
+		});
+	}, [topic, sortBy, order]);
 
 	if (isLoading) {
 		return (
@@ -51,6 +44,12 @@ const Articles = () => {
 	return (
 		<main>
 			<Topics />
+			<DropdownQueries
+				sortBy={sortBy}
+				setSortBy={setSortBy}
+				order={order}
+				setOrder={setOrder}
+			/>
 			<section>
 				<ul className="gallery">
 					{articles.map((article) => {
