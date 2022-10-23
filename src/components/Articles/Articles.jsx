@@ -6,7 +6,7 @@ import { GoComment } from 'react-icons/go';
 import { Oval } from 'react-loader-spinner';
 import { getArticles } from '../../utils/api';
 import moment from 'moment';
-import Topics from '../Topics/Topics';
+
 import DropdownQueries from '../DropdownQueries/DropdownQueries';
 
 const Articles = () => {
@@ -43,7 +43,6 @@ const Articles = () => {
 	}
 	return (
 		<main>
-			<Topics />
 			<DropdownQueries
 				sortBy={sortBy}
 				setSortBy={setSortBy}
