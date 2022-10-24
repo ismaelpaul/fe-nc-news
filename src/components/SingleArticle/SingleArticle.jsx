@@ -61,17 +61,21 @@ const SingleArticle = () => {
 						</p>
 						<p>{article.body}</p>
 						<div className="single-article-interaction">
-							<p>
+							<div className="single-article-votes">
 								{' '}
 								<ArticleVotes
 									article_id={article_id}
 									article={article}
 									setArticle={setArticle}
 								/>
-							</p>
-							<p>
-								<GoComment /> <strong>{article.comment_count}</strong> comments
-							</p>
+							</div>
+							<div className="single-article-comments">
+								<GoComment className="comment-icon" />
+
+								<p>
+									<strong>{article.comment_count}</strong> comments
+								</p>
+							</div>
 						</div>
 						<CommentAdder
 							article_id={article_id}
