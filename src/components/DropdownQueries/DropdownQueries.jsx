@@ -20,9 +20,7 @@ const DropdownQueries = ({ sortBy, setSortBy, order, setOrder }) => {
 					value={sortBy}
 					onChange={(e) => handleSortOnChange(e)}
 				>
-					<option selected value={'created_at'}>
-						Date
-					</option>
+					<option value={'created_at'}>Date</option>
 					<option value={'comment_count'}>Comments</option>
 					<option value={'votes'}>Votes</option>
 					<option value={'title'}>Title</option>
@@ -39,9 +37,7 @@ const DropdownQueries = ({ sortBy, setSortBy, order, setOrder }) => {
 					value={order}
 					onChange={(e) => handleOrderOnChange(e)}
 				>
-					<option selected value={'DESC'}>
-						Descending
-					</option>
+					<option value={'DESC'}>Descending</option>
 					<option value={'ASC'}>Ascending</option>
 				</select>
 			</div>
