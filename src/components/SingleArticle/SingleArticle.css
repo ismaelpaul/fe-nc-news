@@ -32,8 +32,19 @@ p {
 	justify-content: center;
 	align-items: center;
 	margin: 1rem 0;
+	gap: 2.5rem;
 }
 
 .comment-icon {
 	font-size: 1.4rem;
+}
+.single-article-comments {
+	display: flex;
+	align-items: center;
+}
+.single-article-comments p {
+	padding-left: 0.5rem;
+}
+.single-article-votes p {
+	padding: 0.5rem;
 }
