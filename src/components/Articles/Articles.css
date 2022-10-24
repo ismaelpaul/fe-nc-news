@@ -19,11 +19,8 @@
 }
 .card h1 {
 	margin-top: 1rem;
-	padding: 1rem;
-}
-.card p {
-	padding: 1rem;
-	margin-bottom: 1rem;
+	padding: 0.4rem 1rem;
+	line-height: 2rem;
 }
 .spinner {
 	justify-content: center;
@@ -38,4 +35,27 @@
 li a {
 	text-decoration: none;
 	color: black;
+}
+.article-interaction {
+	display: flex;
+	justify-content: center;
+	margin: 1rem 0;
+	gap: 2.5rem;
+}
+.article-votes {
+	display: flex;
+	align-items: center;
+}
+.icon {
+	font-size: 1.4rem;
+}
+.article-comments {
+	display: flex;
+	align-items: center;
+}
+.article-comments p {
+	padding-left: 0.5rem;
+}
+.article-votes p {
+	padding: 0.5rem;
 }

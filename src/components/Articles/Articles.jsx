@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 
 import { GoComment } from 'react-icons/go';
+import { BsHandThumbsUp, BsHandThumbsDown } from 'react-icons/bs';
 import { Oval } from 'react-loader-spinner';
 import { getArticles } from '../../utils/api';
 import moment from 'moment';
@@ -63,10 +64,19 @@ const Articles = () => {
 									</p>
 
 									<div className="article-interaction">
-										<p>
-											<GoComment /> <strong>{article.comment_count}</strong>{' '}
-											comments
-										</p>
+										<div className="article-votes">
+											<BsHandThumbsUp className="icon" />
+											<p>
+												<strong>{article.votes}</strong>
+											</p>
+											<BsHandThumbsDown className="icon" />
+										</div>
+										<div className="article-comments">
+											<GoComment className="icon" />{' '}
+											<p>
+												<strong>{article.comment_count}</strong> comments
+											</p>
+										</div>
 									</div>
 								</Link>
 							</li>
