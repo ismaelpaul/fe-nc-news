@@ -57,7 +57,7 @@ const Articles = () => {
 							<li key={article.article_id} className="card">
 								<Link to={`/articles/${article.article_id}`}>
 									<h1>{article.title}</h1>
-									<p className="author">
+									<p className="article-author">
 										{' '}
 										posted by <strong>{article.author}</strong> •{' '}
 										{moment(article.created_at).fromNow()}

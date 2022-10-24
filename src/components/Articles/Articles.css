@@ -42,6 +42,9 @@ li a {
 	margin: 1rem 0;
 	gap: 2.5rem;
 }
+.article-author {
+	margin-bottom: 2.5rem;
+}
 .article-votes {
 	display: flex;
 	align-items: center;
