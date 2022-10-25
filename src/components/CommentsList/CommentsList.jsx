@@ -1,12 +1,15 @@
 import './CommentsList.css';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import { Oval } from 'react-loader-spinner';
 import moment from 'moment';
 import { BsHandThumbsUp, BsHandThumbsDown } from 'react-icons/bs';
 import { getCommentsByArticle } from '../../utils/api';
+import { UserContext } from '../../contexts/User';
 
 const CommentsList = ({ article_id, commentsList, setCommentsList }) => {
 	const [isLoading, setIsLoading] = useState(true);
+
+	const { loggedInUser } = useContext(UserContext);
 
 	useEffect(() => {
 		getCommentsByArticle(article_id).then(({ comments }) => {
@@ -44,6 +47,11 @@ const CommentsList = ({ article_id, commentsList, setCommentsList }) => {
 								{' '}
 								posted by <strong>{comment.author}</strong> •{' '}
 								{moment(comment.created_at).fromNow()}
+								{loggedInUser.username === comment.author ? (
+									<button>Delete comment</button>
+								) : (
+									<p></p>
+								)}
 							</p>
 							<p>{comment.body}</p>
 							<p>
