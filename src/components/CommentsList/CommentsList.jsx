@@ -3,7 +3,7 @@ import { useEffect, useState, useContext } from 'react';
 import { Oval } from 'react-loader-spinner';
 import moment from 'moment';
 import { BsHandThumbsUp, BsHandThumbsDown } from 'react-icons/bs';
-import { getCommentsByArticle } from '../../utils/api';
+import { deleteComment, getCommentsByArticle } from '../../utils/api';
 import { UserContext } from '../../contexts/User';
 
 const CommentsList = ({ article_id, commentsList, setCommentsList }) => {
@@ -17,6 +17,13 @@ const CommentsList = ({ article_id, commentsList, setCommentsList }) => {
 			setIsLoading(false);
 		});
 	}, [article_id, setCommentsList]);
+
+	const handleDeleteComment = (comment) => {
+		setIsLoading(true);
+		deleteComment(comment.comment_id).then(() => {
+			setIsLoading(false);
+		});
+	};
 
 	if (isLoading) {
 		return (
@@ -42,17 +49,20 @@ const CommentsList = ({ article_id, commentsList, setCommentsList }) => {
 					return (
 						<li key={comment.comment_id}>
 							<hr></hr>
-
-							<p className="comments-author">
-								{' '}
-								posted by <strong>{comment.author}</strong> •{' '}
-								{moment(comment.created_at).fromNow()}
-								{loggedInUser.username === comment.author ? (
-									<button>Delete comment</button>
-								) : (
-									<p></p>
-								)}
-							</p>
+							<div className="comments-details-wrapper">
+								<p className="comments-author">
+									{' '}
+									posted by <strong>{comment.author}</strong> •{' '}
+									{moment(comment.created_at).fromNow()}
+									{loggedInUser.username === comment.author ? (
+										<button onClick={() => handleDeleteComment(comment)}>
+											Delete comment
+										</button>
+									) : (
+										<p></p>
+									)}
+								</p>
+							</div>
 							<p>{comment.body}</p>
 							<p>
 								<BsHandThumbsUp aria-label="votes for this comment" />{' '}
