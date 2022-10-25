@@ -19,6 +19,7 @@
 }
 .card h1 {
 	margin-top: 1rem;
+	margin-bottom: 0.5rem;
 	padding: 0.4rem 1rem;
 	line-height: 2rem;
 }
