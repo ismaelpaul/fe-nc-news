@@ -10,8 +10,8 @@
 	padding-right: 0 !important;
 }
 .single-article-card,
-h1,
-p {
+.single-article-card h1,
+.single-article-card p {
 	padding: 0.4rem 1rem;
 	line-height: 1.5rem;
 }
