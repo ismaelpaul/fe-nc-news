@@ -9,6 +9,46 @@
 }
 
 .comments-author {
+	display: flex;
+	flex: 1;
+	align-items: center;
 	font-size: 0.9rem;
 	list-style-type: none;
+	gap: 0.5rem;
+}
+.delete-comment {
+	display: flex;
+	flex: 1;
+	justify-content: flex-end;
+	align-items: center;
+	margin-left: 55%;
+	padding: 0.2rem;
+}
+.delete-icon {
+	font-size: 1.2rem;
+	color: red;
+	cursor: pointer;
+}
+.delete-comment p {
+	color: red;
+	padding: 0.4rem 0.5rem;
+}
+
+.deleted-card {
+	margin: 10px auto;
+	padding: 20px;
+	background: #fff;
+	border-radius: 5px;
+	width: 30%;
+	transition: all 5s ease-in-out;
+}
+
+.deleted-card .close {
+	top: 20px;
+	right: 30px;
+	transition: all 200ms;
+	font-size: 30px;
+	font-weight: bold;
+	text-decoration: none;
+	color: #333;
 }
