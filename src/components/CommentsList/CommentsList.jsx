@@ -3,26 +3,38 @@ import { useEffect, useState, useContext } from 'react';
 import { Oval } from 'react-loader-spinner';
 import moment from 'moment';
 import { BsHandThumbsUp, BsHandThumbsDown } from 'react-icons/bs';
+import { VscTrash } from 'react-icons/vsc';
 import { deleteComment, getCommentsByArticle } from '../../utils/api';
 import { UserContext } from '../../contexts/User';
 
 const CommentsList = ({ article_id, commentsList, setCommentsList }) => {
-	const [isLoading, setIsLoading] = useState(true);
+	const [isLoading, setIsLoading] = useState(false);
 
 	const { loggedInUser } = useContext(UserContext);
 
 	useEffect(() => {
-		getCommentsByArticle(article_id).then(({ comments }) => {
-			setCommentsList(comments);
-			setIsLoading(false);
-		});
+		setIsLoading(true);
+		getCommentsByArticle(article_id)
+			.then(({ comments }) => {
+				setCommentsList(comments);
+				setIsLoading(false);
+			})
+			.catch((err) => {
+				setIsLoading(false);
+			});
 	}, [article_id, setCommentsList]);
 
 	const handleDeleteComment = (comment) => {
 		setIsLoading(true);
-		deleteComment(comment.comment_id).then(() => {
-			setIsLoading(false);
-		});
+
+		deleteComment(comment.comment_id)
+			.then(() => {
+				setCommentsList((currComments) => [...currComments]);
+				setIsLoading(false);
+			})
+			.catch((err) => {
+				setIsLoading(false);
+			});
 	};
 
 	if (isLoading) {
@@ -55,11 +67,14 @@ const CommentsList = ({ article_id, commentsList, setCommentsList }) => {
 									posted by <strong>{comment.author}</strong> •{' '}
 									{moment(comment.created_at).fromNow()}
 									{loggedInUser.username === comment.author ? (
-										<button onClick={() => handleDeleteComment(comment)}>
-											Delete comment
-										</button>
+										<div className="delete-comment">
+											<VscTrash
+												className="delete-icon"
+												onClick={() => handleDeleteComment(comment)}
+											/>
+										</div>
 									) : (
-										<p></p>
+										<span></span>
 									)}
 								</p>
 							</div>
