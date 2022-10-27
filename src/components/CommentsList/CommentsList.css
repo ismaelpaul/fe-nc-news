@@ -52,3 +52,12 @@
 	text-decoration: none;
 	color: #333;
 }
+.comments-details-wrapper {
+	margin-top: 0.5rem;
+	display: flex;
+	margin-left: 1rem;
+}
+.comment-body {
+	margin: 1rem;
+	text-align: left;
+}

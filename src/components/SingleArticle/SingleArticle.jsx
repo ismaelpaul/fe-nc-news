@@ -8,6 +8,7 @@ import CommentsList from '../CommentsList/CommentsList';
 import CommentAdder from '../CommentAdder/CommentAdder';
 import { getArticleById } from '../../utils/api';
 import ArticleVotes from '../ArticleVotes/ArticleVotes';
+import UserAvatar from '../UserAvatar/UserAvatar';
 
 const SingleArticle = () => {
 	const { article_id } = useParams();
@@ -54,11 +55,13 @@ const SingleArticle = () => {
 					<li key={article.article_id} className="single-article-card">
 						<p className="single-article-topic">{article.topic}</p>
 						<h1>{article.title}</h1>
-						<p className="author">
-							{' '}
-							posted by <strong>{article.author}</strong> •{' '}
-							{moment(article.created_at).fromNow()}
-						</p>
+						<div className="posted-by">
+							<UserAvatar author={article.author} />
+							<p>
+								<strong>{article.author}</strong> •{' '}
+								{moment(article.created_at).fromNow()}
+							</p>
+						</div>
 						<p>{article.body}</p>
 						<div className="single-article-interaction">
 							<div className="single-article-votes">

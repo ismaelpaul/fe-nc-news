@@ -6,6 +6,7 @@ import { BsHandThumbsUp, BsHandThumbsDown } from 'react-icons/bs';
 import { VscTrash } from 'react-icons/vsc';
 import { deleteComment, getCommentsByArticle } from '../../utils/api';
 import { UserContext } from '../../contexts/User';
+import UserAvatar from '../UserAvatar/UserAvatar';
 
 const CommentsList = ({ article_id, commentsList, setCommentsList }) => {
 	const [isLoading, setIsLoading] = useState(false);
@@ -62,9 +63,9 @@ const CommentsList = ({ article_id, commentsList, setCommentsList }) => {
 						<li key={comment.comment_id}>
 							<hr></hr>
 							<div className="comments-details-wrapper">
+								<UserAvatar author={comment.author} />
 								<p className="comments-author">
-									{' '}
-									posted by <strong>{comment.author}</strong> •{' '}
+									<strong>{comment.author}</strong> •{' '}
 									{moment(comment.created_at).fromNow()}
 									{loggedInUser.username === comment.author ? (
 										<div className="delete-comment">
@@ -78,7 +79,7 @@ const CommentsList = ({ article_id, commentsList, setCommentsList }) => {
 									)}
 								</p>
 							</div>
-							<p>{comment.body}</p>
+							<p className="comment-body">{comment.body}</p>
 							<p>
 								<BsHandThumbsUp aria-label="votes for this comment" />{' '}
 								<strong>{comment.votes}</strong> <BsHandThumbsDown />
