@@ -18,6 +18,10 @@ const Users = () => {
 		});
 	}, []);
 
+	const handleLogin = (user) => {
+		localStorage.setItem('loggedInUser', JSON.stringify(user));
+		setLoggedInUser(user);
+	};
 	if (isLoading) {
 		return (
 			<div className="spinner-container">
@@ -42,7 +46,7 @@ const Users = () => {
 				{allUsers.map((user) => {
 					return (
 						<Link className="user-card" to={'/articles'}>
-							<li key={user.username} onClick={() => setLoggedInUser(user)}>
+							<li key={user.username} onClick={() => handleLogin(user)}>
 								<img
 									src={user.avatar_url}
 									alt={`avatar for ${user.username}`}
