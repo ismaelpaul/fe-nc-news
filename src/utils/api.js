@@ -55,3 +55,9 @@ export const getUsers = () => {
 		return res.data;
 	});
 };
+
+export const getUserByUsername = (username) => {
+	return newsApi.get(`/users/${username}`).then((res) => {
+		return res.data;
+	});
+};

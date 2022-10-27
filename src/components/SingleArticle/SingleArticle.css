@@ -48,3 +48,12 @@
 .single-article-votes p {
 	padding: 0.5rem;
 }
+.posted-by {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 1rem;
+}
+.posted-by p {
+	padding: 0.3rem;
+}
