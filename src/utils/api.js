@@ -38,14 +38,21 @@ export const postComment = (article_id, newComment) => {
 		});
 };
 
-export const getCommentsByArticle = (article_id) => {
-	return newsApi.get(`/articles/${article_id}/comments`).then((res) => {
-		return res.data;
-	});
+export const getCommentsByArticle = (article_id, reqBody) => {
+	return newsApi
+		.get(`/articles/${article_id}/comments`, reqBody)
+		.then((res) => {
+			return res.data;
+		});
 };
 
 export const deleteComment = (comment_id) => {
 	return newsApi.delete(`/comments/${comment_id}`).then((res) => {
+		return res.data;
+	});
+};
+export const updateCommentVotes = (comment_id) => {
+	return newsApi.patch(`/comments/${comment_id}`).then((res) => {
 		return res.data;
 	});
 };
