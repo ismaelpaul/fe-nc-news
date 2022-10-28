@@ -53,7 +53,12 @@ const SingleArticle = () => {
 			<section className="single-article-body">
 				<ul>
 					<li key={article.article_id} className="single-article-card">
-						<p className="single-article-topic">{article.topic}</p>
+						<div className="single-article-topic">
+							<p>
+								{article['topic'].charAt(0).toUpperCase() +
+									article['topic'].slice(1)}
+							</p>
+						</div>
 						<h1>{article.title}</h1>
 						<div className="posted-by">
 							<UserAvatar author={article.author} />

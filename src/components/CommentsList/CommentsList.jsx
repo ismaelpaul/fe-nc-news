@@ -80,10 +80,12 @@ const CommentsList = ({ article_id, commentsList, setCommentsList }) => {
 								</p>
 							</div>
 							<p className="comment-body">{comment.body}</p>
-							<p>
-								<BsHandThumbsUp aria-label="votes for this comment" />{' '}
-								<strong>{comment.votes}</strong> <BsHandThumbsDown />
-							</p>
+							<div className="comment-votes-wrapper">
+								<p>
+									<BsHandThumbsUp aria-label="votes for this comment" />{' '}
+									<strong>{comment.votes}</strong> <BsHandThumbsDown />
+								</p>
+							</div>
 						</li>
 					);
 				})}

@@ -7,7 +7,10 @@
 .comments-card li {
 	list-style-type: none;
 }
-
+hr {
+	border: 1px solid;
+	border-color: rgb(240, 240, 240);
+}
 .comments-author {
 	display: flex;
 	flex: 1;
@@ -60,4 +63,7 @@
 .comment-body {
 	margin: 1rem;
 	text-align: left;
+}
+.comment-votes-wrapper {
+	margin-bottom: 1rem;
 }

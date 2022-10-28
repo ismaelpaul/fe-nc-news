@@ -8,6 +8,7 @@
 	background-color: white;
 	padding-left: 0 !important;
 	padding-right: 0 !important;
+	border-radius: 1.5rem;
 }
 .single-article-card,
 .single-article-card h1,
@@ -33,6 +34,22 @@
 	align-items: center;
 	margin: 1rem 0;
 	gap: 2.5rem;
+}
+.single-article-topic {
+	display: flex;
+	justify-content: flex-end;
+	margin-right: 1rem;
+	margin-top: 0.5rem;
+}
+.single-article-topic p {
+	letter-spacing: 0.5px;
+	max-width: 50%;
+	padding: 0.2rem 1rem;
+	border: 1px solid #bcbcbc;
+	color: #898989;
+	border-radius: 2rem;
+	font-size: 0.8rem;
+	line-height: 1rem;
 }
 
 .comment-icon {
