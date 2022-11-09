@@ -11,11 +11,13 @@ export default function Header() {
 		<header>
 			<h1>NC News</h1>
 			<div className="loggedin-container">
-				<img
-					className="profile-img"
-					src={loggedInUser.avatar_url}
-					alt={`avatar for ${loggedInUser.username}`}
-				/>
+				<div className="image-cropper-login">
+					<img
+						className="profile-img"
+						src={loggedInUser.avatar_url}
+						alt={`avatar for ${loggedInUser.username}`}
+					/>
+				</div>
 
 				<div className="user-details">
 					<p>

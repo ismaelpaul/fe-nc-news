@@ -34,10 +34,16 @@ header h1 {
 	align-items: center;
 	gap: 1rem;
 }
-.profile-img {
-	max-width: 25%;
-	height: 2.5rem;
+.image-cropper-login {
+	width: 3rem;
+	height: 3rem;
+	overflow: hidden;
 	border-radius: 50%;
+	background-color: white;
+}
+.profile-img {
+	margin-top: 5%;
+	height: 85%;
 }
 .user-details {
 	color: white;
@@ -57,7 +63,8 @@ header h1 {
 		padding: 0 1.2rem;
 		height: 8vh;
 	}
-	.profile-img {
+	.profile-img,
+	.image-cropper-login {
 		display: none;
 	}
 }
