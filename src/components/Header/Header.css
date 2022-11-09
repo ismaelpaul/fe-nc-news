@@ -2,7 +2,7 @@ header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 0 3rem 0 3rem;
+	padding: 0 3rem;
 	background-color: rgb(216, 0, 0);
 	height: 10vh;
 }
@@ -48,4 +48,16 @@ header h1 {
 }
 .logout {
 	cursor: pointer;
+}
+
+/* small */
+
+@media screen and (max-width: 576px) {
+	header {
+		padding: 0 1.2rem;
+		height: 8vh;
+	}
+	.profile-img {
+		display: none;
+	}
 }

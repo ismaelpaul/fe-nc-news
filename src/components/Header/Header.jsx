@@ -19,7 +19,7 @@ export default function Header() {
 
 				<div className="user-details">
 					<p>
-						Hi, <strong>{loggedInUser.username}</strong>
+						Hi, <strong>{loggedInUser.username}</strong>!
 					</p>
 					<p
 						className="logout"
