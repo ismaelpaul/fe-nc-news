@@ -1,7 +1,6 @@
 .topic-body {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: center;
 	align-items: center;
 	background-color: white;
 	min-height: 10%;
@@ -12,11 +11,11 @@
 .topic-gallery {
 	display: flex;
 	flex-wrap: wrap;
-	padding-left: 1rem;
 	list-style-type: none;
 	gap: 1rem;
 }
 .topic-buttons-all {
+	min-width: 7rem;
 	margin: 1rem;
 	background-color: white;
 	color: #3b3b3b;
@@ -60,4 +59,24 @@
 	padding: 1rem;
 	font-size: 1rem;
 	color: black;
+}
+
+/* small */
+
+@media screen and (max-width: 576px) {
+	.topic-body {
+		flex-wrap: nowrap;
+		overflow-x: scroll;
+	}
+	.topic-gallery {
+		flex: none;
+		margin-right: 1.2rem;
+	}
+}
+
+/* medium to large */
+@media screen and (min-width: 576px) {
+	.topic-body {
+		justify-content: center;
+	}
 }
