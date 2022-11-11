@@ -8,7 +8,7 @@
 
 .card {
 	text-decoration: none;
-	width: 50%;
+	width: 90%;
 	background-color: white;
 	border-radius: 1.5rem;
 	transition: box-shadow 0.4s;
@@ -22,6 +22,9 @@
 	margin-bottom: 0.5rem;
 	padding: 0.4rem 1rem;
 	line-height: 2rem;
+}
+.card p {
+	font-size: 0.9rem;
 }
 .spinner {
 	justify-content: center;
@@ -62,4 +65,64 @@ li a {
 }
 .article-votes p {
 	padding: 0.5rem;
+}
+
+/* extra small */
+
+@media screen and (min-width: 320px) {
+	.card {
+		width: 90%;
+	}
+	.card h1 {
+		font-size: 1.2rem;
+		line-height: 1.5rem;
+	}
+}
+
+/* small  */
+
+@media screen and (min-width: 576px) {
+	.card {
+		width: 90%;
+	}
+	.card h1 {
+		font-size: 1.3rem;
+		line-height: 1.6rem;
+	}
+	.card p {
+		font-size: 1rem;
+	}
+}
+
+/* medium */
+
+@media screen and (min-width: 768px) {
+	.card {
+		width: 70%;
+	}
+	.card p {
+		font-size: 1rem;
+	}
+}
+
+/* large */
+
+@media screen and (min-width: 992px) {
+	.card {
+		width: 70%;
+	}
+	.card p {
+		font-size: 1rem;
+	}
+}
+
+/* extra large */
+
+@media screen and (min-width: 1200px) {
+	.card {
+		width: 50%;
+	}
+	.card p {
+		font-size: 1rem;
+	}
 }
