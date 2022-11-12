@@ -9,12 +9,12 @@ const DropdownQueries = ({ sortBy, setSortBy, order, setOrder }) => {
 	};
 	return (
 		<section className="dropdown">
-			<div>
-				<label className="label-dropdown" htmlFor="sort_by">
+			<div className="dropdown-sort">
+				<label className="label-dropdown-sort" htmlFor="sort_by">
 					Sort articles by:
 				</label>
 				<select
-					className="select-dropdown"
+					className="select-dropdown-sort"
 					name="sort_by"
 					id="sort_by"
 					value={sortBy}
@@ -26,12 +26,12 @@ const DropdownQueries = ({ sortBy, setSortBy, order, setOrder }) => {
 					<option value={'title'}>Title</option>
 				</select>
 			</div>
-			<div>
-				<label className="label-dropdown" htmlFor="order_by">
+			<div className="dropdown-order">
+				<label className="label-dropdown-order" htmlFor="order_by">
 					Order:
 				</label>
 				<select
-					className="select-dropdown"
+					className="select-dropdown-order"
 					name="oder_by"
 					id="order_by"
 					value={order}

@@ -41,7 +41,3 @@ The app should open in your browser on `http://localhost:3000/`
 ---
 
 ### Work in progress
-
-<ul>
-<li>Working on media queries for fully responsive layout</li>
-</ul>
