@@ -1,12 +1,9 @@
 .user-container {
-	margin-top: 1rem;
-	display: grid;
-	grid-template-columns: repeat(3, 15rem);
-	grid-template-rows: repeat(3, minmax(15rem, auto));
-	grid-gap: 1rem;
-	justify-content: center;
+	margin: 1rem 15% 0;
+	width: 70%;
 }
 .user-card {
+	padding: 2rem;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -16,6 +13,7 @@
 	cursor: pointer;
 	text-decoration: none;
 	list-style-type: none;
+	margin-bottom: 1rem;
 }
 .user-card li {
 	display: flex;
@@ -33,4 +31,27 @@
 	max-width: 10rem;
 	max-height: 7rem;
 	object-fit: scale-down;
+}
+
+/* small  */
+
+@media screen and (min-width: 576px) {
+	.user-container {
+		display: grid;
+		grid-template-columns: repeat(2, 15rem);
+		grid-template-rows: repeat(2, minmax(15rem, auto));
+		grid-gap: 1rem;
+		justify-content: center;
+	}
+}
+/* large */
+
+@media screen and (min-width: 992px) {
+	.user-container {
+		display: grid;
+		grid-template-columns: repeat(3, 15rem);
+		grid-template-rows: repeat(3, minmax(15rem, auto));
+		grid-gap: 1rem;
+		justify-content: center;
+	}
 }
