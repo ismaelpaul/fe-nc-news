@@ -1,18 +1,53 @@
 .dropdown {
 	display: flex;
-	justify-content: space-evenly;
-	margin: 1rem 5rem;
+	margin: 0 5% 1.5rem;
+	justify-content: space-between;
 }
-.label-dropdown {
-	margin-right: 0.5rem;
+.dropdown-sort,
+.dropdown-order {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
 }
-.select-dropdown {
+.select-dropdown-sort,
+.select-dropdown-order {
 	font-size: 1rem;
 	color: black;
 	padding: 0.3rem;
 	border-radius: 0.3rem;
 }
+.label-dropdown-order {
+	text-align: left;
+}
 select {
 	border: none;
 	border-bottom: 1px solid #757575;
+}
+
+/* small */
+@media screen and (min-width: 576px) {
+	.dropdown-sort,
+	.dropdown-order {
+		display: inline;
+	}
+	.label-dropdown-sort,
+	.label-dropdown-order {
+		padding-right: 0.5rem;
+	}
+}
+
+/* medium */
+
+@media screen and (min-width: 768px) {
+	.dropdown {
+		margin: 0 15% 1.5rem;
+	}
+}
+
+/* extra large */
+
+@media screen and (min-width: 1200px) {
+	.dropdown {
+		margin: 0 25% 1.5rem;
+	}
 }
