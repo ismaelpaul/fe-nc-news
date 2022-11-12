@@ -61,7 +61,6 @@ const CommentsList = ({ article_id, commentsList, setCommentsList }) => {
 				{commentsList.map((comment) => {
 					return (
 						<li key={comment.comment_id}>
-							<hr></hr>
 							<div className="comments-details-wrapper">
 								<UserAvatar author={comment.author} />
 								<p className="comments-author">
@@ -82,10 +81,15 @@ const CommentsList = ({ article_id, commentsList, setCommentsList }) => {
 							<p className="comment-body">{comment.body}</p>
 							<div className="comment-votes-wrapper">
 								<p>
-									<BsHandThumbsUp aria-label="votes for this comment" />{' '}
-									<strong>{comment.votes}</strong> <BsHandThumbsDown />
+									<BsHandThumbsUp
+										className="comment-votes-icon"
+										aria-label="votes for this comment"
+									/>{' '}
+									<strong>{comment.votes}</strong>{' '}
+									<BsHandThumbsDown className="comment-votes-icon" />
 								</p>
 							</div>
+							<hr></hr>
 						</li>
 					);
 				})}

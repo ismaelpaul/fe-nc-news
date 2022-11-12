@@ -6,9 +6,29 @@
 	padding: 0.5rem;
 }
 .thumb-unvoted {
-	font-size: 1.4rem;
+	font-size: 1.2rem;
 }
 .thumb-voted {
-	font-size: 1.4rem;
+	font-size: 1.2rem;
 	color: red;
+}
+
+/* small */
+@media screen and (min-width: 576px) {
+	.thumb-unvoted,
+	.thumb-voted {
+		font-size: 1.3rem;
+	}
+}
+
+/* medium */
+
+@media screen and (min-width: 768px) {
+	.thumb-unvoted,
+	.thumb-voted {
+		font-size: 1.4rem;
+	}
+	.votes p {
+		font-size: 1.1rem;
+	}
 }

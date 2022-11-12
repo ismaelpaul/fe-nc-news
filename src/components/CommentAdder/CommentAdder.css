@@ -1,16 +1,19 @@
 .comment-adder-form {
-	display: flex;
-	justify-content: space-between;
 	background-color: rgb(241, 241, 241);
 	padding: 1rem;
+	align-items: center;
 }
 .comment-adder-text {
-	resize: none;
-	width: 73%;
-	height: 2rem;
-	line-height: 1.8rem;
+	resize: vertical;
+	width: 100%;
+	height: 4rem;
+	line-height: 1.2rem;
+	border-radius: 8px;
+	margin-bottom: 0.5rem;
+	padding-top: 0.3rem;
 }
 .comment-adder-btn-inactive {
+	width: 100%;
 	border: 1.5px solid red;
 	border-radius: 25px;
 	background-color: white;
@@ -19,10 +22,35 @@
 	font-weight: bold;
 }
 .comment-adder-btn-active {
+	width: 100%;
 	border: 1.5px solid red;
 	border-radius: 25px;
 	background-color: red;
 	padding: 0.5rem 1rem;
 	color: white;
 	font-weight: bold;
+}
+
+/* medium */
+
+@media screen and (min-width: 768px) {
+	.comment-adder-form {
+		display: flex;
+		gap: 1rem;
+	}
+	.comment-adder-text {
+		width: 80%;
+		height: 2rem;
+		margin-bottom: 0;
+	}
+	.comment-adder-btn-inactive,
+	.comment-adder-btn-active {
+		align-self: center;
+		width: 30%;
+	}
+}
+
+/* large */
+
+@media screen and (min-width: 992px) {
 }
