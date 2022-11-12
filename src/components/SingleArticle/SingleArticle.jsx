@@ -50,7 +50,7 @@ const SingleArticle = () => {
 
 	return (
 		<main>
-			<section className="single-article-body">
+			<section className="single-article">
 				<ul>
 					<li key={article.article_id} className="single-article-card">
 						<div className="single-article-topic">
@@ -67,7 +67,7 @@ const SingleArticle = () => {
 								{moment(article.created_at).fromNow()}
 							</p>
 						</div>
-						<p>{article.body}</p>
+						<p className="single-article-body">{article.body}</p>
 						<div className="single-article-interaction">
 							<div className="single-article-votes">
 								{' '}
