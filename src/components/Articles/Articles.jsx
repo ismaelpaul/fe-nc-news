@@ -9,6 +9,7 @@ import { getArticles } from '../../utils/api';
 import moment from 'moment';
 
 import DropdownQueries from '../DropdownQueries/DropdownQueries';
+import UserAvatar from '../UserAvatar/UserAvatar';
 
 const Articles = () => {
 	const { topic } = useParams();
@@ -57,11 +58,14 @@ const Articles = () => {
 							<li key={article.article_id} className="card">
 								<Link to={`/articles/${article.article_id}`}>
 									<h1>{article.title}</h1>
-									<p className="article-author">
-										{' '}
-										posted by <strong>{article.author}</strong> •{' '}
-										{moment(article.created_at).fromNow()}
-									</p>
+									<div className="posted-by">
+										<UserAvatar author={article.author} />
+										<p className="article-author">
+											{' '}
+											<strong>{article.author}</strong> •{' '}
+											{moment(article.created_at).fromNow()}
+										</p>
+									</div>
 
 									<div className="article-interaction">
 										<div className="article-votes">

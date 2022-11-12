@@ -43,12 +43,10 @@ li a {
 .article-interaction {
 	display: flex;
 	justify-content: center;
-	margin: 1rem 0;
+	margin: 2.5rem 0 1rem 0;
 	gap: 2.5rem;
 }
-.article-author {
-	margin-bottom: 2.5rem;
-}
+
 .article-votes {
 	display: flex;
 	align-items: center;
