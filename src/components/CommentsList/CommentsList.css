@@ -1,8 +1,5 @@
-.comments-card {
-	margin-top: 2rem;
-}
 .comments-card ul {
-	margin-top: 2rem;
+	margin-top: 1.5rem;
 }
 .comments-card li {
 	list-style-type: none;
@@ -10,6 +7,7 @@
 hr {
 	border: 1px solid;
 	border-color: rgb(240, 240, 240);
+	margin-bottom: 1rem;
 }
 .comments-author {
 	display: flex;
@@ -18,14 +16,15 @@ hr {
 	font-size: 0.9rem;
 	list-style-type: none;
 	gap: 0.5rem;
+	padding-left: 0.5rem;
 }
 .delete-comment {
 	display: flex;
 	flex: 1;
 	justify-content: flex-end;
 	align-items: center;
-	margin-left: 55%;
 	padding: 0.2rem;
+	margin-right: 1rem;
 }
 .delete-icon {
 	font-size: 1.2rem;
@@ -61,9 +60,54 @@ hr {
 	margin-left: 1rem;
 }
 .comment-body {
-	margin: 1rem;
+	padding: 0.4rem 1rem;
 	text-align: left;
+	font-size: 0.9rem;
 }
 .comment-votes-wrapper {
-	margin-bottom: 1rem;
+	margin-top: 1rem;
+	margin-bottom: 1.5rem;
+}
+
+.comment-votes-wrapper p {
+	font-size: 0.9rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.4rem;
+}
+.comment-votes-icon,
+.delete-icon {
+	font-size: 1.2rem;
+}
+
+/* small */
+@media screen and (min-width: 576px) {
+	.comment-votes-icon,
+	.delete-icon {
+		font-size: 1.3rem;
+	}
+}
+
+/* medium */
+
+@media screen and (min-width: 768px) {
+	.comment-votes-wrapper p {
+		font-size: 1.1rem;
+	}
+	.comment-votes-icon,
+	.delete-icon {
+		font-size: 1.4rem;
+	}
+	.comment-body {
+		padding: 0.4rem 1.5rem;
+	}
+	.comments-details-wrapper {
+		margin-left: 1.5rem;
+	}
+}
+
+/* large */
+
+@media screen and (min-width: 992px) {
 }
