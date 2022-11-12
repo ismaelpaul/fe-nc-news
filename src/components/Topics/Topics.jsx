@@ -7,6 +7,7 @@ import { getTopics } from '../../utils/api';
 const Topics = () => {
 	const [topics, setTopics] = useState([]);
 	const [isLoading, setIsLoading] = useState(true);
+	const [chosenIndex, setChosenIndex] = useState(-1);
 
 	useEffect(() => {
 		getTopics().then(({ topic }) => {
@@ -34,15 +35,30 @@ const Topics = () => {
 	return (
 		<section className="topic-body">
 			<Link to={`/articles/`}>
-				<button className="topic-buttons-all">All Articles</button>
+				<button
+					onClick={() => setChosenIndex(-1)}
+					className={
+						chosenIndex === -1
+							? 'topic-buttons-all-active'
+							: 'topic-buttons-all'
+					}
+				>
+					All Articles
+				</button>
 			</Link>
 
 			<ul className="topic-gallery">
-				{topics.map((topic) => {
+				{topics.map((topic, index) => {
 					return (
-						<li key={topic.slug}>
+						<li onClick={() => setChosenIndex(index)} key={topic.slug}>
 							<Link to={`/articles/topic/${topic.slug}`}>
-								<button className="topic-buttons">
+								<button
+									className={
+										index === chosenIndex
+											? 'topic-buttons-active'
+											: 'topic-buttons'
+									}
+								>
 									{topic['slug'].charAt(0).toUpperCase() +
 										topic['slug'].slice(1)}
 								</button>

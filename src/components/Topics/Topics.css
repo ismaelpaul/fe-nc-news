@@ -26,7 +26,18 @@
 	font-weight: bold;
 	letter-spacing: 0.5px;
 }
-
+.topic-buttons-all-active {
+	min-width: 7rem;
+	margin: 1rem;
+	background-color: #696969;
+	color: #ffffff;
+	border: 2px solid #696969;
+	padding: 0.3rem 1rem;
+	border-radius: 2rem;
+	cursor: pointer;
+	font-weight: bold;
+	letter-spacing: 0.5px;
+}
 .topic-buttons {
 	color: #3b3b3b;
 	background-color: #d2d2d2;
@@ -37,9 +48,7 @@
 	font-weight: bold;
 	letter-spacing: 0.5px;
 }
-
-.topic-buttons:focus,
-.topic-buttons-all:focus {
+.topic-buttons-active {
 	color: #ffffff;
 	background-color: #696969;
 	border: 2px solid #696969;
@@ -49,6 +58,17 @@
 	font-weight: bold;
 	letter-spacing: 0.5px;
 }
+/* .topic-buttons:focus,
+.topic-buttons-all:focus {
+	color: #ffffff;
+	background-color: #696969;
+	border: 2px solid #696969;
+	padding: 0.3rem 1rem;
+	border-radius: 2rem;
+	cursor: pointer;
+	font-weight: bold;
+	letter-spacing: 0.5px;
+} */
 
 .topic-buttons:hover,
 .topic-buttons-all:hover {
