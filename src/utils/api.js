@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const newsApi = axios.create({
-	baseURL: 'https://dark-jade-walkingstick-cap.cyclic.app/api',
+	baseURL: 'https://backend-ncnews.cyclic.app/api',
 });
 
 export const getArticles = (topic, sort_by, order) => {
