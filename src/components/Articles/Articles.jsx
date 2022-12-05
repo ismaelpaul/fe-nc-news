@@ -9,7 +9,6 @@ import { getArticles } from '../../utils/api';
 import moment from 'moment';
 
 import DropdownQueries from '../DropdownQueries/DropdownQueries';
-import UserAvatar from '../UserAvatar/UserAvatar';
 
 const Articles = () => {
 	const { topic } = useParams();

@@ -8,7 +8,6 @@ import CommentsList from '../CommentsList/CommentsList';
 import CommentAdder from '../CommentAdder/CommentAdder';
 import { getArticleById } from '../../utils/api';
 import ArticleVotes from '../ArticleVotes/ArticleVotes';
-import UserAvatar from '../UserAvatar/UserAvatar';
 
 const SingleArticle = () => {
 	const { article_id } = useParams();
