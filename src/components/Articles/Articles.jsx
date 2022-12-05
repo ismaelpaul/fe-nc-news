@@ -59,7 +59,6 @@ const Articles = () => {
 								<Link to={`/articles/${article.article_id}`}>
 									<h1>{article.title}</h1>
 									<div className="posted-by">
-										<UserAvatar author={article.author} />
 										<p className="article-author">
 											{' '}
 											<strong>{article.author}</strong> •{' '}

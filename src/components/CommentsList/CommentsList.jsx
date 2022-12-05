@@ -62,7 +62,6 @@ const CommentsList = ({ article_id, commentsList, setCommentsList }) => {
 					return (
 						<li key={comment.comment_id}>
 							<div className="comments-details-wrapper">
-								<UserAvatar author={comment.author} />
 								<p className="comments-author">
 									<strong>{comment.author}</strong> •{' '}
 									{moment(comment.created_at).fromNow()}

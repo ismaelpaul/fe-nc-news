@@ -61,7 +61,6 @@ const SingleArticle = () => {
 						</div>
 						<h1>{article.title}</h1>
 						<div className="posted-by">
-							<UserAvatar author={article.author} />
 							<p>
 								<strong>{article.author}</strong> •{' '}
 								{moment(article.created_at).fromNow()}
