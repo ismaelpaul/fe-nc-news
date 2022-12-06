@@ -2,13 +2,13 @@ import './AllUsers.css';
 import { Link } from 'react-router-dom';
 import { useEffect, useState, useContext } from 'react';
 import { getUsers } from '../../utils/api';
-import { UserContext } from '../../contexts/User';
 import { Oval } from 'react-loader-spinner';
+import { LoggedUserContext } from '../../contexts/LoggedUser';
 
 const Users = () => {
 	const [allUsers, setAllUsers] = useState([]);
 	const [isLoading, setIsLoading] = useState(true);
-	const { setLoggedInUser } = useContext(UserContext);
+	const { setLoggedInUser } = useContext(LoggedUserContext);
 
 	useEffect(() => {
 		setIsLoading(true);

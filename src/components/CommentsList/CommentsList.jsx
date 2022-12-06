@@ -5,12 +5,12 @@ import moment from 'moment';
 import { BsHandThumbsUp, BsHandThumbsDown } from 'react-icons/bs';
 import { VscTrash } from 'react-icons/vsc';
 import { deleteComment, getCommentsByArticle } from '../../utils/api';
-import { UserContext } from '../../contexts/User';
+import { LoggedUserContext } from '../../contexts/LoggedUser';
 
 const CommentsList = ({ article_id, commentsList, setCommentsList }) => {
 	const [isLoading, setIsLoading] = useState(false);
 
-	const { loggedInUser } = useContext(UserContext);
+	const { loggedInUser } = useContext(LoggedUserContext);
 
 	useEffect(() => {
 		setIsLoading(true);

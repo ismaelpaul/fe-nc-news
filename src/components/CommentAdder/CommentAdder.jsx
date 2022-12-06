@@ -1,10 +1,10 @@
 import { useContext, useState } from 'react';
-import { UserContext } from '../../contexts/User';
+import { LoggedUserContext } from '../../contexts/LoggedUser';
 import { postComment } from '../../utils/api';
 import './CommentAdder.css';
 
 const CommentAdder = ({ article_id, setCommentsList }) => {
-	const { loggedInUser } = useContext(UserContext);
+	const { loggedInUser } = useContext(LoggedUserContext);
 	const [newComment, setNewComment] = useState({
 		username: loggedInUser.username,
 		body: '',

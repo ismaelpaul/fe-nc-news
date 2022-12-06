@@ -1,11 +1,11 @@
 import './Header.css';
 import { HiUserCircle } from 'react-icons/hi';
 import { Link } from 'react-router-dom';
-import { UserContext } from '../../contexts/User';
+import { LoggedUserContext } from '../../contexts/LoggedUser';
 import { useContext } from 'react';
 
 export default function Header() {
-	const { loggedInUser, setLoggedInUser } = useContext(UserContext);
+	const { loggedInUser, setLoggedInUser } = useContext(LoggedUserContext);
 
 	return loggedInUser.username ? (
 		<header>
