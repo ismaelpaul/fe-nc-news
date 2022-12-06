@@ -22,6 +22,17 @@
 	line-height: 1.3rem;
 	font-size: 0.9rem;
 }
+.image-cropper {
+	width: 2.2rem;
+	height: 2.2rem;
+	overflow: hidden;
+	border-radius: 50%;
+	border: 1px solid rgb(201, 201, 201);
+}
+.profile-img-avatar {
+	margin-top: 5%;
+	height: 90%;
+}
 .author {
 	font-size: 0.9rem;
 	margin-bottom: 1.5rem;

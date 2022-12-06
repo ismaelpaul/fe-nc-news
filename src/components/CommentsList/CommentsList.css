@@ -9,6 +9,17 @@ hr {
 	border-color: rgb(240, 240, 240);
 	margin-bottom: 1rem;
 }
+.image-cropper {
+	width: 2.2rem;
+	height: 2.2rem;
+	overflow: hidden;
+	border-radius: 50%;
+	border: 1px solid rgb(201, 201, 201);
+}
+.profile-img-avatar {
+	margin-top: 5%;
+	height: 90%;
+}
 .comments-author {
 	display: flex;
 	flex: 1;
@@ -16,7 +27,6 @@ hr {
 	font-size: 0.9rem;
 	list-style-type: none;
 	gap: 0.5rem;
-	padding-left: 0.5rem;
 }
 .delete-comment {
 	display: flex;

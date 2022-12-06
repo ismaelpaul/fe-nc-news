@@ -8,6 +8,8 @@ import CommentsList from '../CommentsList/CommentsList';
 import CommentAdder from '../CommentAdder/CommentAdder';
 import { getArticleById } from '../../utils/api';
 import ArticleVotes from '../ArticleVotes/ArticleVotes';
+import { useContext } from 'react';
+import { UsersContext } from '../../contexts/Users';
 
 const SingleArticle = () => {
 	const { article_id } = useParams();
@@ -15,6 +17,7 @@ const SingleArticle = () => {
 	const [commentsList, setCommentsList] = useState([]);
 	const [isLoading, setIsLoading] = useState(true);
 	const [error, setError] = useState(null);
+	const { allUsers } = useContext(UsersContext);
 
 	useEffect(() => {
 		getArticleById(article_id)
@@ -60,6 +63,19 @@ const SingleArticle = () => {
 						</div>
 						<h1>{article.title}</h1>
 						<div className="posted-by">
+							{allUsers.map((user) => {
+								return user.username === article.author ? (
+									<div className="image-cropper">
+										<img
+											className="profile-img-avatar"
+											src={user.avatar_url}
+											alt={`avatar for ${user.username}`}
+										/>
+									</div>
+								) : (
+									<></>
+								);
+							})}
 							<p>
 								<strong>{article.author}</strong> •{' '}
 								{moment(article.created_at).fromNow()}

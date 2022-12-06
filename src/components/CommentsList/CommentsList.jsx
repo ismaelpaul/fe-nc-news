@@ -6,11 +6,13 @@ import { BsHandThumbsUp, BsHandThumbsDown } from 'react-icons/bs';
 import { VscTrash } from 'react-icons/vsc';
 import { deleteComment, getCommentsByArticle } from '../../utils/api';
 import { LoggedUserContext } from '../../contexts/LoggedUser';
+import { UsersContext } from '../../contexts/Users';
 
 const CommentsList = ({ article_id, commentsList, setCommentsList }) => {
 	const [isLoading, setIsLoading] = useState(false);
 
 	const { loggedInUser } = useContext(LoggedUserContext);
+	const { allUsers } = useContext(UsersContext);
 
 	useEffect(() => {
 		setIsLoading(true);
@@ -61,7 +63,20 @@ const CommentsList = ({ article_id, commentsList, setCommentsList }) => {
 					return (
 						<li key={comment.comment_id}>
 							<div className="comments-details-wrapper">
-								<p className="comments-author">
+								<div className="comments-author">
+									{allUsers.map((user) => {
+										return user.username === comment.author ? (
+											<div className="image-cropper">
+												<img
+													className="profile-img-avatar"
+													src={user.avatar_url}
+													alt={`avatar for ${user.username}`}
+												/>
+											</div>
+										) : (
+											<></>
+										);
+									})}
 									<strong>{comment.author}</strong> •{' '}
 									{moment(comment.created_at).fromNow()}
 									{loggedInUser.username === comment.author ? (
@@ -74,7 +89,7 @@ const CommentsList = ({ article_id, commentsList, setCommentsList }) => {
 									) : (
 										<span></span>
 									)}
-								</p>
+								</div>
 							</div>
 							<p className="comment-body">{comment.body}</p>
 							<div className="comment-votes-wrapper">
