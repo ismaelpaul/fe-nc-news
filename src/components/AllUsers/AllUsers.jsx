@@ -1,43 +1,17 @@
 import './AllUsers.css';
 import { Link } from 'react-router-dom';
-import { useEffect, useState, useContext } from 'react';
-import { getUsers } from '../../utils/api';
-import { Oval } from 'react-loader-spinner';
+import { useContext } from 'react';
 import { LoggedUserContext } from '../../contexts/LoggedUser';
+import { UsersContext } from '../../contexts/Users';
 
 const Users = () => {
-	const [allUsers, setAllUsers] = useState([]);
-	const [isLoading, setIsLoading] = useState(true);
 	const { setLoggedInUser } = useContext(LoggedUserContext);
-
-	useEffect(() => {
-		setIsLoading(true);
-		getUsers().then(({ user }) => {
-			setAllUsers(user);
-			setIsLoading(false);
-		});
-	}, []);
+	const { allUsers } = useContext(UsersContext);
 
 	const handleLogin = (user) => {
 		localStorage.setItem('loggedInUser', JSON.stringify(user));
 		setLoggedInUser(user);
 	};
-	if (isLoading) {
-		return (
-			<div className="spinner-container">
-				<Oval
-					className="spinner"
-					wrapperClass="spinner"
-					height={50}
-					width={50}
-					color="red"
-					secondaryColor="red"
-					strokeWidth={5}
-					strokeWidthSecondary={5}
-				/>
-			</div>
-		);
-	}
 
 	return (
 		<section>
