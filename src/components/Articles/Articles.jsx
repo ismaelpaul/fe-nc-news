@@ -31,8 +31,8 @@ const Articles = () => {
 		getUsers().then(({ user }) => {
 			setAllUsers(user);
 		});
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, []);
+		console.log('Rendered');
+	}, [setAllUsers]);
 
 	if (isLoading) {
 		return (
