@@ -31,7 +31,6 @@ const Articles = () => {
 		getUsers().then(({ user }) => {
 			setAllUsers(user);
 		});
-		console.log('Rendered');
 	}, [setAllUsers]);
 
 	if (isLoading) {
