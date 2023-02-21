@@ -2,7 +2,7 @@
 
 ## Summary
 
-This project I made as part of the Front End module at [Northcoders](https://northcoders.com/). It is a React app that displays news using a RESTful API that was created as my [Back End Project](https://github.com/ismaelpaul/be-nc-news). The articles can be filtered by topic and sorted by date, comments, votes and title and all of them can be ordered by ascending or desceding order. You can also log in with a predefined user and upvote or downvote articles, write and delete comments.
+This project I made as part of the Front End module at [Northcoders](https://northcoders.com/). It is a React app that displays news using a RESTful API that was created as my [Back End Project](https://github.com/ismaelpaul/be-nc-news). The articles can be filtered by topic and sorted by date, comments, votes and title and all of them can be ordered by ascending or descending order. You can also log in with a predefined user and upvote or downvote articles, write and delete comments.
 
 -> [Hosted Version](https://nc-news-ismael.netlify.app/)
 
